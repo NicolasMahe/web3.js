@@ -132,6 +132,10 @@ RequestManager.prototype.send = function (data, callback) {
     this.provider[this.provider.sendAsync ? 'sendAsync' : 'send'](payload, function (err, result) {
         if(result && result.id && payload.id !== result.id) return callback(new Error('Wrong response id "'+ result.id +'" (expected: "'+ payload.id +'") in '+ JSON.stringify(payload)));
 
+        console.error('send callback error', err)
+        console.error('send callback result.error', result.error)
+        console.error('send callback result', result)
+
         if (err) {
             return callback(err);
         }
