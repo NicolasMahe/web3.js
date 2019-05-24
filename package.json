@@ -11,7 +11,6 @@
     "test": "./test"
   },
   "scripts": {
-    "postinstall": "lerna bootstrap",
     "build": "gulp",
     "build-all": "gulp all",
     "release": "lerna bootstrap; lerna publish; gulp version; gulp; gulp publishTag; git push --tags",
